@@ -33,10 +33,23 @@ public class HubSpotConfig {
         return scopes;
     }
 
-    private static final String HUBSPOT_AUTH_URL = "https://app.hubspot.com/oauth/authorize";
+    private final String HUBSPOT_AUTH_URL = "https://app.hubspot.com/oauth/authorize";
+
+    private final String HUBSPOT_URL_CONTACT = "https://api.hubapi.com/crm/v3/objects/contacts";
+
+    private final String HUBSPOT_URL_TOKEN = "https://api.hubapi.com/oauth/v1/token";
+
 
     public String getHubSpotAuthUrl() {
         return String.format("%s?client_id=%s&redirect_uri=%s&scope=%s&response_type=code",
                 HUBSPOT_AUTH_URL, clientId, redirectUri, scopes.replace(" ", "%20"));
+    }
+
+    public String getHubspotUrlContact() {
+        return HUBSPOT_URL_CONTACT;
+    }
+
+    public String getHubspotUrlToken() {
+        return HUBSPOT_URL_TOKEN;
     }
 }

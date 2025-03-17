@@ -42,5 +42,13 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(body, HttpStatus.BAD_REQUEST);
     }
 
+    @ExceptionHandler(OAuthException.class)
+    public ResponseEntity<Object> handleOAuthException(OAuthException ex) {
+        Map<String, Object> body = new HashMap<>();
+        body.put("timestamp", LocalDateTime.now());
+        body.put("message", "Erro ao processar a autenticação com o HubSpot");
+        body.put("error", ex.getMessage());
 
+        return new ResponseEntity<>(body, HttpStatus.BAD_REQUEST);
+    }
 }
