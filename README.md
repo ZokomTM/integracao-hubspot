@@ -16,7 +16,7 @@ Antes de rodar a aplicação, certifique-se de ter os seguintes requisitos insta
 
 - Java 17
 - Maven
-- Conta de desenvolvedor no HubSpot
+- Conta Ativa no HubSpot
 
 ## Como Executar
 
